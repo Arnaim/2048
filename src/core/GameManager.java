@@ -1,3 +1,5 @@
+package core;
+import input.KeyPress;
 
 import java.awt.*;
 import javax.swing.*;

@@ -1,4 +1,5 @@
 
+package model;
 import java.io.Serializable;
 import java.util.*;
 
@@ -37,7 +38,7 @@ public class Tile implements Serializable {
         nac = n;
     }
     
-    NumbersAndColors value() {
+    public NumbersAndColors value() {
         return nac;
     }
     
@@ -49,7 +50,7 @@ public class Tile implements Serializable {
         return valueOf(nac.value() << 1);
     }
     
-    boolean empty() {
+    public boolean empty() {
         return nac == NumbersAndColors._0;
     }
 

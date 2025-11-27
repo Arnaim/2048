@@ -1,3 +1,8 @@
+package input;
+
+import core.GameManager;
+import core.Grid;
+
 import java.awt.*;
 import java.util.Objects;
 import javax.swing.*;

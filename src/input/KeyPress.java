@@ -1,3 +1,8 @@
+package input;
+
+import core.GameManager;
+import model.BoardMemento;
+import core.Grid;
 
 import static java.awt.event.KeyEvent.VK_DOWN;
 import static java.awt.event.KeyEvent.VK_LEFT;

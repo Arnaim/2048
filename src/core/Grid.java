@@ -1,3 +1,9 @@
+package core;
+
+import model.BoardMemento;
+import model.Tile;
+import model.NumbersAndColors;
+import factory.TileFactory;
 
 import java.awt.*;
 import java.util.*;
@@ -10,6 +16,7 @@ import java.io.Serializable;
  * The Memento Pattern allows us to save and restore the state of the board.
  */
 public class Grid extends JPanel implements Serializable {
+    private final TileFactory tileFactory = new TileFactory();
     private static Grid instance;
     private static final long serialVersionUID = 1L;
 
@@ -56,7 +63,7 @@ public class Grid extends JPanel implements Serializable {
         List<Integer> list = findEmptyIndex();
         if (!list.isEmpty()) {
             int index = list.get((int) (Math.random() * list.size()));
-            tiles[index] = Tile.randomTile();
+            tiles[index] = tileFactory.createRandomTile();
         }
     }
     
@@ -89,7 +96,7 @@ public class Grid extends JPanel implements Serializable {
         return tiles[x + y * ROW];
     }
     
-    boolean checkIfCanMove() {
+    public boolean checkIfCanMove() {
         if (!isGridFull()) {
             return true;
         }
